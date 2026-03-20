@@ -1,7 +1,8 @@
 :root{
 
 --blue-primary: #1b83fa;
---blue-light: #b9dbfa;
+--blue-light-1: #b9dbfa;
+--blue-light-2: #e0eaf4;
 --blue-dark: #2d5a8a;
 --blue-darker: #1e3a5f;
 
@@ -9,7 +10,7 @@
 --gray-light-2: #dee2e6;
 
 --gray-medium-1: #64748b;
---gray-medium-2: #94a3b8;
+--gray-medium-2: #bacadf;
 
 --gray-dark-1: #1e293b;
 --gray-dark-2: #0f172a;
@@ -28,6 +29,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid */
 }
 
 body{

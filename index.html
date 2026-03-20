@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>MyFinance</title>
 </head>
@@ -11,13 +12,13 @@
 
     <header>
         <div class="logo-container">
-            <img src="imagens/logo.png" alt="Logo de um porquinho de cofrinho azul com branco">
+            <img src="imagens/logo.png" alt="Logo do MyFinance representada por um cofrinho azul e branco">
             <h1>MyFinance</h1>
         </div>
 
         <nav>
             <label for="menu">
-                <img class="icone-menu" src="imagens/menu.svg" alt="">
+                <img class="icone-menu" src="imagens/menu.svg" alt="Abrir menu de navegação">
             </label>
             
             <input type="checkbox" id="menu" name="menu" value="accepted" hidden>
@@ -43,6 +44,57 @@
                     financeiros com a melhor ferramenta do mercado.</p>
                 <a class="button" href="#">Criar Conta</a>
 
+                <img src="imagens/logo.png" alt="Logo do MyFinance representada por um cofrinho azul e branco">
+                
+                <div class="card-intro">
+                    <p>Economize mais, gaste melhor</p>
+
+                    <div class="wallet-row">
+                        <i data-lucide="wallet"></i>
+                        <p >Crie sua conta</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="recursos">
+        
+            <div class="text">
+                <h2>Tudo que você precisa em um só lugar</h2>
+                <p>Recursos completos para gerenciar suas finanças com eficiência</p>
+            </div>
+      
+
+            <div class="feature-card">
+                <i data-lucide="chart-column"></i>  
+                <h3>Análise Detalhada</h3>
+                <p>Visualize seus gastos com gráficos intuitivos e relatórios completos</p>
+            </div>
+
+             <div class="feature-card">
+                <i data-lucide="wallet"></i>
+                <h3>Controle Total</h3>
+                <p>Gerencie todas as suas contas e cartões em um só lugar</p>
+            </div>
+
+            <div class="feature-card">
+                <i data-lucide="target"></i>  
+                <h3>Metas Financeiras</h3>
+                <p>Defina objetivos e acompanhe seu progresso em tempo real</p>
+            </div>
+
+            
+            <div class="feature-card">
+                <i data-lucide="chart-pie"></i>  
+                <h3>Orçamento Inteligente</h3>
+                <p>Crie orçamentos personalizados e receba alertas inteligentes</p>
+            </div>
+
+             <div class="feature-card">
+                <i data-lucide="smartphone"></i>  
+                <h3>Acesso Total</h3>
+                <p>Disponível em todos os dispositivos, a qualquer momento</p>
             </div>
 
         </section>
@@ -54,6 +106,11 @@
 
 
     </footer>
-    
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+
 </body>
 </html>

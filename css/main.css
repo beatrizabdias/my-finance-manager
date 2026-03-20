@@ -5,16 +5,18 @@
 
 
 .headline-container{
-    width: 320px;
-    min-height: 400px;
+    width: 100%;
+    max-width: 320px;
+    min-height: 610px;
     margin: auto;
 }
 
 .pre-title{
     display: flex;
-    background-color: var(--blue-light);
+    background-color: var(--blue-light-1);
     border-radius: 40px;
-    width: 225px;
+    width: 100%;
+    max-width: 225px;
     align-items: center;
     justify-content: center;
     height: 26px;
@@ -53,9 +55,81 @@ span{
     margin-top: 30px;
     height: 50px;
     line-height: 50px;
+}
 
-
-
+.headline-container > img{
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
 
 }
 
+.card-intro{
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-intro p{
+    padding-top: 6px;
+}
+
+.wallet-row {
+    display: flex;
+    padding-bottom: 6px;
+}
+
+
+.wallet-row svg{
+    color: green;
+}
+
+
+.recursos svg{
+    color: var(--blue-primary);
+}
+
+.text{
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.text h2{
+    font-size: 30px;
+    padding-bottom: 19px;
+}
+
+.text p{
+    font-size: 18px;
+    color: var(--gray-medium-1);
+}
+
+.feature-card{
+    background-color: var(--blue-light-2);
+    border-radius: 6px;
+    max-width: 329px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: 1px solid var(--gray-medium-2) ;
+    height: 175px;
+    margin: 20px auto;
+    padding: 20px;
+
+}
+
+.feature-card h3{
+    margin: 15px 0;
+}
+
+.feature-card p {
+    color: var(--gray-medium-1);
+
+}
