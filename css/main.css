@@ -133,3 +133,131 @@ span{
     color: var(--gray-medium-1);
 
 }
+
+.benefits {
+    background-color: var(--gray-light-1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.benefits-text{
+    width: 100%;
+    max-width: 330px;
+    text-align: left;
+}
+
+.benefits-text h2{
+    font-size: 28px;
+    max-width: 300px;
+    padding-top: 45px;
+    padding-bottom: 20px;
+}
+
+.benefits-text p{
+    max-width: 330px;
+    line-height: 24px;
+    padding-bottom: 26px;
+    color: var(--gray-medium-1);
+}
+
+
+.benefit-item{
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 4px; 
+    align-items: start;
+    padding-bottom: 28px;
+    max-width: 320px;
+
+}
+
+.benefit-item svg{
+    color: green;
+    grid-row: 1/3;
+}
+
+.benefit-item h3{
+    display: inline-block;
+    grid-column: 2;
+
+}
+.benefit-item p{
+    grid-column: 2;
+    color: var(--gray-medium-1)
+
+}
+.benefits img{
+    max-width: 300px;
+}
+
+
+.cta-section{
+    background-color: var(--blue-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    height: 210px;
+}
+
+.cta-section h2{
+    color: white;
+    font-size: 25px;
+}
+.cta-section p{
+    color: white;
+    max-width: 290px;
+    text-align: center;
+
+}
+
+.cta-section .button{
+    background-color: white;
+    color: var(--blue-primary);
+    font-size: 14px;
+    margin-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+}
+
+
+.footer{
+    background-color: var(--gray-dark-2);
+    height: 200px;
+    padding-top: 20px;
+}
+
+.footer h2{
+    color:white;
+    font-size: 15px;
+    padding-bottom: 19px;
+}
+
+.footer p{
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 15px;
+
+}
+
+.my-finance{
+    display: flex;
+    align-items: center;
+}
+
+.footer img{
+    max-width: 100px;
+    color: white;
+
+}
+.footer .divisor{
+    color: red;
+    width: 350px;
+    margin: auto;
+}

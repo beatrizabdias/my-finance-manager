@@ -1,8 +1,6 @@
 header{
-
     background-color: white;
     border-bottom: 1px solid var(--gray-light-2);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +36,6 @@ nav a{
     margin-right: 25px;
 }
 
-label:hover~a{
+#menu:checked~a{
     display:block;
 }

@@ -9,11 +9,11 @@
 --gray-light-1: #e9ecef;
 --gray-light-2: #dee2e6;
 
---gray-medium-1: #64748b;
+--gray-medium-1: #2e4667;
 --gray-medium-2: #bacadf;
 
---gray-dark-1: #1e293b;
---gray-dark-2: #0f172a;
+--gray-dark-1: #3a4c6b;
+--gray-dark-2: #474a53;
 
 
 --success: #10b981;
@@ -26,10 +26,10 @@
 }
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* outline: 1px solid */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid */
 }
 
 body{
