@@ -1,0 +1,310 @@
+@import url(global.css);
+
+header{
+    background-color: white;
+    border-bottom: 1px solid var(--gray-light-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1px;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo-container img{
+    width:100px;
+}
+
+h1{
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gray-dark-1);
+
+}
+
+nav{
+    display: inline-block;
+}
+
+nav a{
+    display: none;
+}
+
+.icone-menu{
+    width: 30px;
+    margin-right: 25px;
+}
+
+#menu:checked~a{
+    display:block;
+}
+
+
+/* Main */
+
+.intro-section{
+    background-color: var(--gray-light-1);
+    padding-top: 39px;
+}
+
+
+.headline-container{
+    width: 100%;
+    max-width: 320px;
+    min-height: 610px;
+    margin: auto;
+}
+
+.pre-title{
+    display: flex;
+    background-color: var(--blue-light-1);
+    border-radius: 40px;
+    width: 100%;
+    max-width: 225px;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+
+    
+}
+.pre-title p{
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+}
+
+h2{
+    margin-top: 19px;
+    font-size: 35px;
+}
+span{
+    color: var(--blue-primary);
+}
+
+.headline-container > p{
+    margin-top: 13px;
+    line-height: 21px;
+
+}
+
+.button{
+    background-color: var(--blue-primary);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.headline-container > img{
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.card-intro{
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-intro p{
+    padding-top: 6px;
+}
+
+.wallet-row {
+    display: flex;
+    padding-bottom: 6px;
+}
+
+
+.wallet-row svg{
+    color: green;
+}
+
+
+.recursos svg{
+    color: var(--blue-primary);
+}
+
+.text{
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.text h2{
+    font-size: 30px;
+    padding-bottom: 19px;
+}
+
+.text p{
+    font-size: 18px;
+    color: var(--gray-medium-1);
+}
+
+.feature-card{
+    background-color: var(--blue-light-2);
+    border-radius: 6px;
+    max-width: 329px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: 1px solid var(--gray-medium-2) ;
+    height: 175px;
+    margin: 20px auto;
+    padding: 20px;
+
+}
+
+.feature-card h3{
+    margin: 15px 0;
+}
+
+.feature-card p {
+    color: var(--gray-medium-1);
+
+}
+
+.benefits {
+    background-color: var(--gray-light-1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.benefits-text{
+    width: 100%;
+    max-width: 330px;
+    text-align: left;
+}
+
+.benefits-text h2{
+    font-size: 28px;
+    max-width: 300px;
+    padding-top: 45px;
+    padding-bottom: 20px;
+}
+
+.benefits-text p{
+    max-width: 330px;
+    line-height: 24px;
+    padding-bottom: 26px;
+    color: var(--gray-medium-1);
+}
+
+
+.benefit-item{
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 4px; 
+    align-items: start;
+    padding-bottom: 28px;
+    max-width: 320px;
+
+}
+
+.benefit-item svg{
+    color: green;
+    grid-row: 1/3;
+}
+
+.benefit-item h3{
+    display: inline-block;
+    grid-column: 2;
+
+}
+.benefit-item p{
+    grid-column: 2;
+    color: var(--gray-medium-1)
+
+}
+.benefits img{
+    max-width: 300px;
+}
+
+
+.cta-section{
+    background-color: var(--blue-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    height: 210px;
+}
+
+.cta-section h2{
+    color: white;
+    font-size: 25px;
+}
+.cta-section p{
+    color: white;
+    max-width: 290px;
+    text-align: center;
+
+}
+
+.cta-section .button{
+    background-color: white;
+    color: var(--blue-primary);
+    font-size: 14px;
+    margin-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+}
+
+
+.footer{
+    background-color: var(--gray-dark-2);
+    height: 200px;
+    padding-top: 20px;
+}
+
+.footer h2{
+    color:white;
+    font-size: 15px;
+    padding-bottom: 19px;
+}
+
+.footer p{
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 15px;
+
+}
+
+.my-finance{
+    display: flex;
+    align-items: center;
+}
+
+.footer img{
+    max-width: 100px;
+    color: white;
+
+}
+.footer .divisor{
+    color: red;
+    width: 350px;
+    margin: auto;
+}

@@ -1,13 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>MyFinance</title>
 </head>
 <body>
-    
+
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="MyFinance Logo">
+            <h1>MyFinance</h1>
+        </div>
+
+        <nav>
+            <label for="menu">
+                <img class="icone-menu" src="imagens/menu.svg" alt="Abrir menu de navegação">
+            </label>
+            
+            <input type="checkbox" id="menu" name="menu" value="accepted" hidden>
+            <a href="#">Recursos</a>
+            <a href="#">Sobre</a>
+            <a href="#">Login</a>
+            <a href="#">Criar conta</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="intro-section">
+
+            <div class="headline-container">
+
+                <div class="pre-title">
+                    <p>Gestão financeira inteligente</p>
+                </div>
+
+                <h2>Controle suas finanças de forma <span>simples e eficaz</span></h2>
+                <p>Organize seus gastos, planeje seu futuro e alcance seus objetivos 
+                    financeiros com a melhor ferramenta do mercado.</p>
+                <a class="button" href="#">Criar Conta</a>
+
+                <img src="imagens/logo.png" alt="MyFinance Logo">
+                
+                <div class="card-intro">
+                    <p>Economize mais, gaste melhor</p>
+
+                    <div class="wallet-row">
+                        <i data-lucide="wallet"></i>
+                        <p >Crie sua conta</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="recursos">
+        
+            <div class="text">
+                <h2>Tudo que você precisa em um só lugar</h2>
+                <p>Recursos completos para gerenciar suas finanças com eficiência</p>
+            </div>
+      
+
+            <div class="feature-card">
+                <i data-lucide="chart-column"></i>  
+                <h3>Análise Detalhada</h3>
+                <p>Visualize seus gastos com gráficos intuitivos e relatórios completos</p>
+            </div>
+
+             <div class="feature-card">
+                <i data-lucide="wallet"></i>
+                <h3>Controle Total</h3>
+                <p>Gerencie todas as suas contas e cartões em um só lugar</p>
+            </div>
+
+            <div class="feature-card">
+                <i data-lucide="target"></i>  
+                <h3>Metas Financeiras</h3>
+                <p>Defina objetivos e acompanhe seu progresso em tempo real</p>
+            </div>
+
+            
+            <div class="feature-card">
+                <i data-lucide="chart-pie"></i>  
+                <h3>Orçamento Inteligente</h3>
+                <p>Crie orçamentos personalizados e receba alertas inteligentes</p>
+            </div>
+
+             <div class="feature-card">
+                <i data-lucide="smartphone"></i>  
+                <h3>Acesso Total</h3>
+                <p>Disponível em todos os dispositivos, a qualquer momento</p>
+            </div>
+
+        </section>
+
+
+        <section class="benefits">
+            <div class="benefits-text">
+                <h2>Tranforme sua relação com o dinheiro</h2>
+                <p>Com My Finance, você tem total visibilidade dos seus gastos, identifica oportunidades de economia e constrói um futuro financeiro mais sólido</p>
+
+            </div>
+
+            <div class="benefits-container">
+
+                <div class="benefit-item">
+                    <i data-lucide="circle-check"></i>  
+                    <h3>Controle em tempo real</h3>
+                    <p>Acompanhe cada centavo que entra e sai, com sincronização instantânea</p>
+
+                </div>
+
+                <div class="benefit-item">
+                    <i data-lucide="circle-check"></i>  
+                    <h3>Insights inteligentes</h3>
+                    <p>Receba recomendações personalizadas baseadas nos seus hábitos</p>
+                </div>
+              
+
+                <div class="benefit-item">
+                    <i data-lucide="circle-check"></i>  
+                    <h3>Privacidade garantida</h3>
+                    <p>Seus dados são criptografados e nunca compartilhados com terceiros</p>
+                    <img src="imagens/logo.png" alt="MyFinance Logo">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cta-section">
+            <h2>Pronto para começar?</h2>
+            <p>Junte-se a milhares de pessoas que já transformaram suas finanças</p>
+            <a href="#" class="button">Acessar Dashboard Gratuitamente ></a>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="my-finance">
+            <img src="imagens/logo.png" alt="MyFinance Logo">
+            <h2>My Finance</h2>
+        </div>
+        <hr class="divisor">
+        <p>Sua solução completa para gestão financeira pessoal
+            <br>2026 My Finance. Todos os direitos reservados
+        </p>
+
+
+
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+
 </body>
 </html>
