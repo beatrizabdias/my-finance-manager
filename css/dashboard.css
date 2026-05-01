@@ -1,2 +1,222 @@
 @import url(global.css);
-@import url(header.css);
+
+
+body{
+    background-color: var(--gray-light-1);
+}
+.page-header{
+    background-color: white;
+    border-bottom: 1px solid var(--gray-light-2);
+    display: flex;
+    justify-content: space-between;
+    padding-right: 16px;
+}
+
+.page-header div{
+    display: flex;
+    align-items: center;
+
+}
+
+.page-header div:last-child{
+    gap: 20px;
+
+}
+.page-header h1{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.page-header img{
+    width: 95px;
+}
+
+
+.dashboard-header{
+    padding: 16px;
+
+}
+
+.dashboard-header h2{
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.dashboard-header p{
+    font-size: 13px;
+    color: var(--blue-dark);
+    padding-bottom: 15px;
+}
+
+
+.search{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-header svg{
+    width: 18px;
+
+}
+
+.dashboard-header input{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-light-1);
+    outline: none;
+    padding-left: 15px;
+    height: 35px;
+}
+
+
+.financial-dashboard > div{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    max-width: 335px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    height: 115px;
+
+}
+
+
+.info-group h2, 
+.info-group .amount{
+    padding-bottom: 10px;
+}
+
+.percentage{
+    font-size: 12px;
+}
+.amount{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.info-group h2{
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+
+.total-balance{
+    background-color: var(--blue-primary);
+}
+
+.total-balance .info-group h2{
+    color: white;
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+
+
+.total-balance .info-group p{
+    color: white;
+}
+
+.total-balance .icon-group svg{
+    color: white;
+}
+
+
+.income,
+.expenses{
+    background-color: white;
+}
+
+.income .percentage,
+.income svg{
+    color: var(--success);
+}
+
+.expenses .percentage,
+.expenses svg{
+    color: var(--danger);
+}
+
+
+
+/* Transacoes */
+
+.transactions-section{
+    background-color: white;
+    max-width: 335px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 15px;
+
+
+}
+
+.transactions-section h2,
+.transactions-section h3{
+    font-size: 13px;
+
+}
+
+.section-header{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.section-header a{
+    font-size: 12px;
+    text-decoration: none;
+    color: var(--blue-primary);
+
+}
+
+
+.transactions-list{
+    padding-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.transaction-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.transaction-item p{
+    font-size: 11px;
+}
+.transaction-item.income svg {
+    background-color: var(--success-light);
+    border-radius: 5px;
+}
+
+.transaction-item.expense svg {
+    background-color: var(--danger-light);
+    border-radius: 5px;
+}
+
+.transaction-item.income svg,
+.transaction-item.income .transaction-amount{
+    color: var(--success);
+}
+
+.transaction-item.expense svg,
+.transaction-item.expense .transaction-amount{
+    color: var(--danger);
+}
+
+.transaction-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+

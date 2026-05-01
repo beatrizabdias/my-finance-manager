@@ -16,8 +16,10 @@
 --gray-dark-2: #474a53;
 
 
---success: #10b981;
---danger: #ef4444;
+--success: #0ba012;
+--success-light: rgb(205, 240, 205);
+--danger: #cc2727;
+--danger-light: rgb(247, 204, 204);
 --warning: #f59e0b;
 
 --category-purple: #8b5cf6;
