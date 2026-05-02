@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/transaction.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <title>MyFinance</title>
+</head>
+
+<body>
+
+
+    <header class="page-header">
+        <div>
+            <img src="../imagens/logo.png" alt="MyFinance Logo">
+            <h1>My Finance</h1>
+        </div>
+        <nav>
+            <button type="button" aria-label="Notificações">
+                <i data-lucide="bell"></i>
+            </button>       
+            <button type="button" aria-label="Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+
+
+    </header>
+
+    <main>
+        <header class="transaction-header">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Aqui está um resumo das suas finanças</p>
+            <div class="search">
+                <i data-lucide="search"></i>
+                <input type="text" id="busca" name="busca" placeholder="Buscar...">
+            </div>
+     
+        </header>
+
+  <section class="transactions-section">
+            <div class="section-header">
+                <h2>Todas as Transções</h2>
+                <button type="button">+ Nova</button>
+            </div>
+
+            <div class="transactions-list">
+                <div class="transaction-item expense">
+                    <div class="transaction-details">
+                        <i data-lucide="arrow-down-right"></i>
+                        <div class="info">
+                            <h3>Supermercado</h3>
+                            <p>Alimentação</p>
+                        </div>
+                    </div>
+                    <div class="transaction-data">
+                        <p class="transaction-amount">-R$ 250.00</p>
+                        <p>10/03/2026</p>
+                    </div>
+                </div>
+                
+                <div class="transaction-item income">
+                    <div class="transaction-details">
+                        <i data-lucide="arrow-up-right"></i>
+                        <div class="info">
+                            <h3>Salário</h3>
+                            <p>Receita</p>
+                        </div>
+                    </div>
+                    <div class="transaction-data">
+                        <p class="transaction-amount">+R$ 8500.00</p>
+                        <p>05/03/2026</p>
+                    </div>
+                </div>
+                
+                <div class="transaction-item expense">
+                    <div class="transaction-details">
+                        <i data-lucide="arrow-down-right"></i>
+                        <div class="info">
+                            <h3>Netflix</h3>
+                            <p>Lazer</p>
+                        </div>
+                    </div>
+                    <div class="transaction-data">
+                        <p class="transaction-amount">-R$ 45.90</p>
+                        <p>08/03/2026</p>
+                    </div>
+                </div>
+                
+                <div class="transaction-item expense">
+                    <div class="transaction-details">
+                        <i data-lucide="arrow-down-right"></i>
+                        <div class="info">
+                            <h3>Uber</h3>
+                            <p>Transporte</p>
+                        </div>
+                    </div>
+                    <div class="transaction-data">
+                        <p class="transaction-amount">-R$ 28.50</p>
+                        <p>09/03/2026</p>
+                    </div>
+                </div>
+                
+                <div class="transaction-item income">
+                    <div class="transaction-details">
+                        <i data-lucide="arrow-up-right"></i>
+                        <div class="info">
+                            <h3>Freelance</h3>
+                            <p>Receita</p>
+                        </div>
+                    </div>
+                    <div class="transaction-data">
+                        <p class="transaction-amount">+R$ 500.50</p>
+                        <p>07/03/2026</p>
+                    </div>
+                </div>
+
+                <div class="transaction-item expense">
+                    <div class="transaction-details">
+                        <i data-lucide="arrow-down-right"></i>
+                        <div class="info">
+                            <h3>Academia</h3>
+                            <p>Saúde</p>
+                        </div>
+                    </div>
+                    <div class="transaction-data">
+                        <p class="transaction-amount">-R$ 28.50</p>
+                        <p>06/03/2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,172 @@
+@import url(global.css);
+
+
+body{
+    background-color: var(--gray-light-1);
+}
+.page-header{
+    background-color: white;
+    border-bottom: 1px solid var(--gray-light-2);
+    display: flex;
+    justify-content: space-between;
+    padding-right: 16px;
+}
+
+.page-header div{
+    display: flex;
+    align-items: center;
+
+}
+.page-header nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-header nav button{
+    border: none;
+    background: none;
+}
+
+
+.page-header h1{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.page-header img{
+    width: 95px;
+}
+
+
+.transaction-header{
+    padding: 16px;
+
+}
+
+.transaction-header h2{
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.transaction-header p{
+    font-size: 13px;
+    color: var(--blue-dark);
+    padding-bottom: 15px;
+}
+
+
+.search{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.transaction-header svg{
+    width: 18px;
+
+}
+
+.transaction-header input{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-light-1);
+    outline: none;
+    padding-left: 15px;
+    height: 35px;
+}
+
+
+.transactions-section{
+    background-color: white;
+    max-width: 335px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-light-1);
+
+
+
+}
+
+.transactions-section h2,
+.transactions-section h3{
+    font-size: 13px;
+
+}
+
+.section-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.section-header button{
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--blue-primary);
+    padding: 8px;
+    border-radius: 7px;
+    border: none;
+
+}
+
+
+.transactions-list{
+    padding-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.transaction-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--gray-light-1);
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.transaction-item p{
+    font-size: 11px;
+}
+.transaction-item.income svg {
+    background-color: var(--success-light);
+    border-radius: 5px;
+}
+
+.transaction-item.expense svg {
+    background-color: var(--danger-light);
+    border-radius: 5px;
+}
+
+.transaction-item.income svg,
+.transaction-item.income .transaction-amount{
+    color: var(--success);
+}
+
+.transaction-item.expense svg,
+.transaction-item.expense .transaction-amount{
+    color: var(--danger);
+}
+
+.transaction-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transaction-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    text-align: right;
+}
