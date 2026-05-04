@@ -1,0 +1,117 @@
+@import url(global.css);
+
+
+body{
+    background-color: var(--gray-light-1);
+}
+.page-header{
+    background-color: white;
+    border-bottom: 1px solid var(--gray-light-2);
+    display: flex;
+    justify-content: space-between;
+    padding-right: 16px;
+}
+
+.page-header div{
+    display: flex;
+    align-items: center;
+
+}
+.page-header nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-header nav button{
+    border: none;
+    background: none;
+}
+
+
+.page-header h1{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.page-header img{
+    width: 95px;
+}
+
+
+.cards-header{
+    padding: 16px;
+
+}
+
+.cards-header h2{
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.cards-header p{
+    font-size: 13px;
+    color: var(--blue-dark);
+    padding-bottom: 15px;
+}
+
+
+.search{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.cards-header svg{
+    width: 18px;
+
+}
+
+.cards-header input{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-light-1);
+    outline: none;
+    padding-left: 15px;
+    height: 35px;
+}
+
+
+.card{
+    border-radius: 10px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 18px;
+    gap: 15px;
+
+}
+
+.card.black{
+    background-color: black;
+    color: white;
+}
+
+.card.blue{
+    background-color: var(--blue-primary);
+    color: white;
+}
+
+.card-body span{
+    display: inline-block;
+    padding-top: 10px;
+    letter-spacing: 2px;
+
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body p,
+.card-footer p{
+    font-size: 10px;
+}
