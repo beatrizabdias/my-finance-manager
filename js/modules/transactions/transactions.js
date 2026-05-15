@@ -1,52 +1,53 @@
-const menu = document.getElementById('menu');
-const sidebar = document.querySelector('.sidebar');
-const filtros = document.querySelectorAll('.filters button');
-const addTransacao = document.querySelectorAll('.open-modal');
-const modal = document.querySelector('.modal-overlay');
-const expenseBtn = document.getElementById('expense-btn');
-const incomeBtn = document.getElementById('income-btn');
+const menuButton = document.getElementById('menu');
+const sidebarElement = document.querySelector('.sidebar');
+const filterButtons= document.querySelectorAll('.filters button');
+const openModalButtons = document.querySelectorAll('.open-modal');
+const modalOverlay = document.querySelector('.modal-overlay');
+const expenseButton = document.getElementById('expense-btn');
+const incomeButton = document.getElementById('income-btn');
 
-const descricao = document.getElementById('description');
-const categoria = document.getElementById('category');
-const valor = document.getElementById('value');
-const data = document.getElementById('date');
-const confirmar = document.querySelector('.add');
-const cancelar = document.querySelector('.cancel');
+const descriptionInput = document.getElementById('description');
+const categoryInput = document.getElementById('category');
+const valueInput = document.getElementById('value');
+const dateInput= document.getElementById('date');
 
-function validarFormulario(){
-    const descricaoValue = descricao.value;
-    const categoriaValue = categoria.value;
-    const valorValue = valor.value;
-    const dataValue = data.value;
+const confirmButton = document.querySelector('.add');
+const cancelButton = document.querySelector('.cancel');
 
-    const tipoTransacao = 
-        expenseBtn.classList.contains('active-expense') ||
-        incomeBtn.classList.contains('active-income')
+function validateForm(){
+    const descriptionValue = descriptionInput.value;
+    const categoryValue = categoryInput.value;
+    const valueValue = valueInput.value;
+    const dateValue = dateInput.value;
+
+    const transactionType = 
+        expenseButton.classList.contains('active-expense') ||
+        incomeButton.classList.contains('active-income')
     
 
-    if(descricaoValue && categoriaValue && valorValue && dataValue && tipoTransacao){
-        confirmar.classList.add('ready');
+    if(descriptionValue && categoryValue && valueValue && dateValue && transactionType){
+        confirmButton.classList.add('ready');
     }else{
-        confirmar.classList.remove('ready');
+        confirmButton.classList.remove('ready');
     }
 
 }
 
 
-let menuAberto = false;
+let isMenuOpen = false;
 
-menu.addEventListener('click' , () => {
-    menuAberto = !menuAberto;
-    sidebar.classList.toggle('hidden');
+menuButton.addEventListener('click' , () => {
+    isMenuOpen = !isMenuOpen;
+    sidebarElement.classList.toggle('hidden');
 
-    if(menuAberto === true){
-        menu.innerHTML = `
+    if(isMenuOpen === true){
+        menuButton.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/>
         <path d="m6 6 12 12"/>
         </svg> `;
 
     } else{
-        menu.innerHTML = `
+        menuButton.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu">
             <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
         </svg>`;
@@ -54,39 +55,39 @@ menu.addEventListener('click' , () => {
 
 });
 
-filtros.forEach((button) => {
+filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        filtros.forEach(btn => btn.classList.remove('active-filter'));
+        filterButtons.forEach(btn => btn.classList.remove('active-filter'));
         button.classList.add('active-filter');
     });
 });
 
-addTransacao.forEach((btn)=>{
+openModalButtons.forEach((btn)=>{
     btn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
+        modalOverlay.classList.remove('hidden');
     }); 
 });
 
 
-expenseBtn.addEventListener('click', () => {
-    incomeBtn.classList.remove('active-income');
-    expenseBtn.classList.add('active-expense');
-    validarFormulario();
+expenseButton.addEventListener('click', () => {
+    incomeButton.classList.remove('active-income');
+    expenseButton.classList.add('active-expense');
+    validateForm();
 });
 
-incomeBtn.addEventListener('click', () => {
-    expenseBtn.classList.remove('active-expense');
-    incomeBtn.classList.add('active-income');
-    validarFormulario();
+incomeButton.addEventListener('click', () => {
+    expenseButton.classList.remove('active-expense');
+    incomeButton.classList.add('active-income');
+    validateForm();
 });
 
-[descricao, categoria, valor, data].forEach(input => {
-    input.addEventListener('input', validarFormulario); 
+[descriptionInput, categoryInput, valueInput, dateInput].forEach(input => {
+    input.addEventListener('input', validateForm); 
 });
 
-cancelar.addEventListener('click', () => {
-    modal.classList.add('hidden');
-    expenseBtn.classList.remove('active-expense');
-    incomeBtn.classList.remove('active-income');
+cancelButton.addEventListener('click', () => {
+    modalOverlay.classList.add('hidden');
+    expenseButton.classList.remove('active-expense');
+    incomeButton.classList.remove('active-income');
 
 })
