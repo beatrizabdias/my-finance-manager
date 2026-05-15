@@ -5,7 +5,33 @@ const addTransacao = document.querySelectorAll('.open-modal');
 const modal = document.querySelector('.modal-overlay');
 const expenseBtn = document.getElementById('expense-btn');
 const incomeBtn = document.getElementById('income-btn');
+
+const descricao = document.getElementById('description');
+const categoria = document.getElementById('category');
+const valor = document.getElementById('value');
+const data = document.getElementById('date');
+const confirmar = document.querySelector('.add');
 const cancelar = document.querySelector('.cancel');
+
+function validarFormulario(){
+    const descricaoValue = descricao.value;
+    const categoriaValue = categoria.value;
+    const valorValue = valor.value;
+    const dataValue = data.value;
+
+    const tipoTransacao = 
+        expenseBtn.classList.contains('active-expense') ||
+        incomeBtn.classList.contains('active-income')
+    
+
+    if(descricaoValue && categoriaValue && valorValue && dataValue && tipoTransacao){
+        confirmar.classList.add('ready');
+    }else{
+        confirmar.classList.remove('ready');
+    }
+
+}
+
 
 let menuAberto = false;
 
@@ -45,13 +71,22 @@ addTransacao.forEach((btn)=>{
 expenseBtn.addEventListener('click', () => {
     incomeBtn.classList.remove('active-income');
     expenseBtn.classList.add('active-expense');
+    validarFormulario();
 });
 
 incomeBtn.addEventListener('click', () => {
     expenseBtn.classList.remove('active-expense');
     incomeBtn.classList.add('active-income');
+    validarFormulario();
+});
+
+[descricao, categoria, valor, data].forEach(input => {
+    input.addEventListener('input', validarFormulario); 
 });
 
 cancelar.addEventListener('click', () => {
     modal.classList.add('hidden');
+    expenseBtn.classList.remove('active-expense');
+    incomeBtn.classList.remove('active-income');
+
 })
