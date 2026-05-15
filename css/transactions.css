@@ -39,6 +39,32 @@ body{
 }
 
 
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-top: 15px;
+    background-color: white;
+    height: 100vh;
+    width: 250px;
+    gap: 19px;
+    position: fixed;
+
+}
+
+.hidden{
+    display: none !important;
+}
+
+.sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
 .transaction-header{
     padding: 16px;
 
@@ -58,7 +84,7 @@ body{
 
 .search{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
@@ -78,6 +104,25 @@ body{
     height: 35px;
 }
 
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+.filters button{
+    padding: 5px;
+    background-color: white;
+    border: 1px solid var(--gray-dark-1);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 10px;
+
+}
+
 
 .transactions-section{
     background-color: white;
@@ -89,8 +134,6 @@ body{
     border-radius: 8px;
     border: 1px solid var(--gray-light-1);
 
-
-
 }
 
 .transactions-section h2,
@@ -99,74 +142,160 @@ body{
 
 }
 
-.section-header{
+.list-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
 
-.section-header button{
-    font-size: 12px;
+.button{
+    font-size: 13px;
     text-decoration: none;
     color: white;
     background-color: var(--blue-primary);
     padding: 8px;
     border-radius: 7px;
     border: none;
-
 }
 
 
-.transactions-list{
-    padding-top: 17px;
+
+.transactions-list.is-empty{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
-.transaction-item{
+
+.transactions-list.is-empty svg {
+    width: 100px;
+    color: var(--gray-light-2);
+}
+
+.transactions-list.is-empty h3{
+    font-size: 14px;
+}
+
+.transactions-list.is-empty p{
+    font-size: 12px;
+    color: var(--gray-dark-2);
+}
+
+
+#fab{
+    border: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    background-color: var(--blue-primary);
+
+}
+
+#fab svg{
+    width: 25px; 
+    height: 25px;
+    color: white; 
+    z-index: 500;
+}
+
+
+.modal-overlay {
+    background-color:rgba(126, 125, 125, 0.521);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border: 1px solid var(--gray-light-1);
-    padding: 10px;
-    border-radius: 5px;
 
 }
 
-.transaction-item p{
-    font-size: 11px;
-}
-.transaction-item.income svg {
-    background-color: var(--success-light);
-    border-radius: 5px;
-}
-
-.transaction-item.expense svg {
-    background-color: var(--danger-light);
-    border-radius: 5px;
+.modal-content{
+    overflow-y: auto;
+    background-color: white;
+    height: auto;
+    max-height: 90vh;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 20px;
+    padding: 23px;
 }
 
-.transaction-item.income svg,
-.transaction-item.income .transaction-amount{
+.modal-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-header h2{
+    font-size: 15px;
+}
+.modal-header svg{
+    width: 20px;
     color: var(--success);
 }
 
-.transaction-item.expense svg,
-.transaction-item.expense .transaction-amount{
-    color: var(--danger);
+.transaction-type{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
 }
 
-.transaction-details{
+.transaction-type button{
+    background: none;
+    border: 1px solid var(--gray-dark-2);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.input-group{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
 }
 
-.transaction-data {
+.input-group input,
+.input-group select{
+    height: 30px;
+    border: 1px solid var(--gray-light-1);
+    border-radius: 5px;
+}
+
+.input-row{
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.input-row .input-group{
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-footer{
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
-    text-align: right;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.modal-footer button{
+    border: 1px solid var(--gray-light-1);
+    border-radius: 5px;
+    height: 30px;
+}
+
+.modal-footer .add{
+    background-color: var(--gray-light-3);
+
 }
