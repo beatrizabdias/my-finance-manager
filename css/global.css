@@ -38,3 +38,12 @@
 body{
   font-family: 'Poppins', sans-serif;
 }
+
+button{
+  cursor: pointer;
+}
+
+button:hover{
+  opacity: 0.9;
+}
+
