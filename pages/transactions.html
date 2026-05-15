@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/transactions.css">
+    <script src="../js/modules/transactions/transactions.js" defer></script>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <title>MyFinance</title>
 </head>
@@ -118,7 +119,7 @@
   <section class="transactions-section">
             <div class="list-header">
                 <h2>Todas as Transações</h2>
-                <button class="button" type="button" aria-label="Nova Transação">+ Nova</button>
+                <button class="open-modal" type="button" aria-label="Nova Transação">+ Nova</button>
             </div>
 
 
@@ -128,12 +129,12 @@
                 </svg>
                 <h3>Nenhuma transação encontrada</h3>
                 <p>Não há transações neste período</p>
-                <button class="button" type="button" aria-label="Adicionar transação">+ Adicionar Transação</button>
+                <button class="open-modal" type="button" aria-label="Adicionar transação">+ Adicionar Transação</button>
             </div>
     </section>
     </main>
     
-    <button id="fab" type="button" aria-label="Adicionar transação">
+    <button id="fab" class="open-modal" type="button" aria-label="Adicionar transação">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
             <path d="M5 12h14"/><path d="M12 5v14"/>
         </svg>
