@@ -1,3 +1,6 @@
+import { createTransaction, getTransactions } from './transaction-crud.js';
+import { renderEmptyState, renderTransaction } from './transaction-render.js';
+
 const menuButton = document.getElementById('menu');
 const sidebarElement = document.querySelector('.sidebar');
 const filterButtons= document.querySelectorAll('.filters button');
@@ -5,6 +8,10 @@ const openModalButtons = document.querySelectorAll('.open-modal');
 const modalOverlay = document.querySelector('.modal-overlay');
 const expenseButton = document.getElementById('expense-btn');
 const incomeButton = document.getElementById('income-btn');
+const modalForm = document.querySelector('.modal-content');
+
+const emptyListContent = document.querySelector('.empty-list-content');
+const transactionsList = document.querySelector('.transactions-list');
 
 const descriptionInput = document.getElementById('description');
 const categoryInput = document.getElementById('category');
@@ -13,6 +20,7 @@ const dateInput= document.getElementById('date');
 
 const confirmButton = document.querySelector('.add');
 const cancelButton = document.querySelector('.cancel');
+
 
 function validateForm(){
     const descriptionValue = descriptionInput.value;
@@ -26,13 +34,12 @@ function validateForm(){
     
 
     if(descriptionValue && categoryValue && valueValue && dateValue && transactionType){
-        confirmButton.classList.add('ready');
+        confirmButton.classList.add('ready');        
     }else{
         confirmButton.classList.remove('ready');
     }
 
 }
-
 
 let isMenuOpen = false;
 
@@ -43,7 +50,7 @@ menuButton.addEventListener('click' , () => {
     if(isMenuOpen === true){
         menuButton.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/>
-        <path d="m6 6 12 12"/>
+            <path d="m6 6 12 12"/>
         </svg> `;
 
     } else{
@@ -61,6 +68,7 @@ filterButtons.forEach((button) => {
         button.classList.add('active-filter');
     });
 });
+
 
 openModalButtons.forEach((btn)=>{
     btn.addEventListener('click', () => {
@@ -89,5 +97,26 @@ cancelButton.addEventListener('click', () => {
     modalOverlay.classList.add('hidden');
     expenseButton.classList.remove('active-expense');
     incomeButton.classList.remove('active-income');
+
+})
+
+modalForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const newTransaction = {
+        description: descriptionInput.value,
+        category: categoryInput.value,
+        value: valueInput.value,
+        date: dateInput.value,
+        type: expenseButton.classList.contains('active-expense') ? 'expense' : 'income'
+    };
+    renderTransaction(createTransaction(newTransaction), emptyListContent, transactionsList);
+    const transactions = getTransactions();
+    renderEmptyState(transactions.length, emptyListContent);
+    modalOverlay.classList.add('hidden');
+    expenseButton.classList.remove('active-expense');
+    incomeButton.classList.remove('active-income');
+    confirmButton.classList.remove('ready');    
+    modalForm.reset();
 
 })

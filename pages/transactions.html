@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/transactions.css">
-    <script src="../js/modules/transactions/transactions.js" defer></script>
+    <script type="module" src="../js/modules/transactions/transactions.js" defer></script>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <title>MyFinance</title>
 </head>
@@ -123,13 +123,15 @@
             </div>
 
 
-            <div class="transactions-list is-empty" >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet">
-                    <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>
-                </svg>
-                <h3>Nenhuma transação encontrada</h3>
-                <p>Não há transações neste período</p>
-                <button class="open-modal" type="button" aria-label="Adicionar transação">+ Adicionar Transação</button>
+            <div class="transactions-list" >
+                <div class="empty-list-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet">
+                        <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>
+                    </svg>
+                    <h3>Nenhuma transação encontrada</h3>
+                    <p>Não há transações neste período</p>
+                    <button class="open-modal" type="button" aria-label="Adicionar transação">+ Adicionar Transação</button>
+                </div>
             </div>
     </section>
     </main>
