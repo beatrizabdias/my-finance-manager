@@ -1,5 +1,5 @@
-import { createTransaction, getTransactions } from './transaction-crud.js';
-import { renderEmptyState, renderTransaction } from './transaction-render.js';
+import { createTransaction, getTransactions, updateTransaction } from './transaction-crud.js';
+import { renderEmptyState, renderTransaction, renderUpdateTransaction} from './transaction-render.js';
 
 const menuButton = document.getElementById('menu');
 const sidebarElement = document.querySelector('.sidebar');
@@ -18,8 +18,13 @@ const categoryInput = document.getElementById('category');
 const valueInput = document.getElementById('value');
 const dateInput= document.getElementById('date');
 
-const confirmButton = document.querySelector('.add');
+const confirmButton = document.querySelector('.add-or-update');
 const cancelButton = document.querySelector('.cancel');
+
+const editButton = document.querySelector('.edit-button');
+const deleteButton = document.querySelector('.delete-button');
+
+let itemEdited = null;
 
 
 function validateForm(){
@@ -102,6 +107,8 @@ cancelButton.addEventListener('click', () => {
 
 modalForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    const transactions = getTransactions();
+
 
     const newTransaction = {
         description: descriptionInput.value,
@@ -110,8 +117,22 @@ modalForm.addEventListener('submit', (e) => {
         date: dateInput.value,
         type: expenseButton.classList.contains('active-expense') ? 'expense' : 'income'
     };
-    renderTransaction(createTransaction(newTransaction), emptyListContent, transactionsList);
-    const transactions = getTransactions();
+
+    if(itemEdited){
+        for(let i = 0; i < transactions.length; i++){
+            if(transactions[i].id === Number(itemEdited.dataset.id)){
+                updateTransaction(i, newTransaction);
+                renderUpdateTransaction(transactions[i], itemEdited);
+                itemEdited = null; 
+                break;
+            }
+        }
+        confirmButton.textContent = '+ Adicionar'
+
+
+    }else{
+        renderTransaction(createTransaction(newTransaction), emptyListContent, transactionsList);
+    }
     renderEmptyState(transactions.length, emptyListContent);
     modalOverlay.classList.add('hidden');
     expenseButton.classList.remove('active-expense');
@@ -120,3 +141,41 @@ modalForm.addEventListener('submit', (e) => {
     modalForm.reset();
 
 })
+
+transactionsList.addEventListener('click', (e) => {
+    const editButton = e.target.closest('.edit-button');
+    const deleteButton = e.target.closest('.delete-button');
+
+
+    if (editButton) {
+        modalOverlay.classList.remove('hidden');
+        confirmButton.textContent = 'Atualizar';
+        const transactionItem = editButton.closest('.transaction-item');
+        const transactionType = editButton.closest('.transaction-item').classList.contains('expense') ? 'expense' : 'income';
+        if(transactionType === 'expense'){
+            expenseButton.classList.add('active-expense');
+
+        }else{
+            incomeButton.classList.add('active-income');
+        }                                           
+        const id = transactionItem.dataset.id;                              
+        const description = transactionItem.querySelector('.info h3').textContent;
+        const category = transactionItem.querySelector('.info p').textContent;
+        const date = transactionItem.querySelector('.transaction-date').textContent;
+        const value = transactionItem.querySelector('.transaction-amount').textContent;
+        const formattedValue = value.replace('-', '').replace('R$', ''). replace('+', '')
+                                .replaceAll(' ', ''). replaceAll('.', ''). replace(',', '.');
+        descriptionInput.value = description;
+        categoryInput.value = category;
+        valueInput.value = formattedValue;
+        const [day, month, year] = date.split('/');
+        dateInput.value = `${year}-${month}-${day}`;
+
+        itemEdited = transactionItem;
+        validateForm();
+    }
+
+    if (deleteButton) {
+        console.log('Deletar Transação');
+    }
+});

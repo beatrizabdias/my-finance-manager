@@ -211,25 +211,36 @@ body{
 
 }
 
+.transaction-item:hover .transaction-actions{
+    display: flex !important;
+    justify-content: flex-end;
+}
+
+.transaction-item:hover .transaction-end-group{
+    display: flex;
+    justify-content: space-between;
+
+
+}
 .transaction-item p{
     font-size: 11px;
 }
-.transaction-item.income svg {
+.transaction-item.income .transaction-icon {
     background-color: var(--success-light);
     border-radius: 5px;
 }
 
-.transaction-item.expense svg {
+.transaction-item.expense .trabsaction-icon {
     background-color: var(--danger-light);
     border-radius: 5px;
 }
 
-.transaction-item.income svg,
+.transaction-item.income .transaction-icon,
 .transaction-item.income .transaction-amount{
     color: var(--success);
 }
 
-.transaction-item.expense svg,
+.transaction-item.expense .transaction-icon,
 .transaction-item.expense .transaction-amount{
     color: var(--danger);
 }
@@ -240,6 +251,12 @@ body{
     gap: 10px;
 }
 
+.transaction-end-group{
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+}
+
 .transaction-data {
     display: flex;
     flex-direction: column;
@@ -248,7 +265,31 @@ body{
 }
 
 
+.transaction-actions{
+    display: none;
+    gap: 10px;
+}
 
+.edit-button,
+.delete-button{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-button svg{
+    color: var(--blue-primary);
+    background-color: transparent;
+}
+
+.delete-button svg{
+    color: var(--danger);
+    background-color: transparent;
+}
 
 #fab{
     border: none;
@@ -387,12 +428,13 @@ select:focus{
     height: 30px;
 }
 
-.modal-footer .add{
+.modal-footer .add-or-update
+{
     background-color: var(--gray-light-3);
 
 }
 
-.modal-footer .add.ready {
+.modal-footer .add-or-update.ready {
     background-color: var(--blue-primary);
     color: white;
     cursor: pointer;
